@@ -1,89 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Natasha The ___</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #222;
-      line-height: 1.6;
+    :root{
+      --bg:#f9f9f9;
+      --text:#222;
+      --muted:#555;
+      --card:#fff;
+      --shadow:0 2px 6px rgba(0,0,0,.1);
+      --header:#222;
+      --nav:#444;
+      --accent:#2962ff;
     }
-    header {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 4rem 2rem;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    header{
+      background:var(--header);
+      color:#fff;
+      text-align:center;
+      padding:4rem 2rem;
     }
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
+    header h1{font-size:2.5rem;margin:.25rem 0 .5rem}
+    header p{font-size:1.15rem;max-width:700px;margin:0 auto}
+    nav{
+      display:flex;justify-content:center;gap:2rem;
+      background:var(--nav);padding:1rem;flex-wrap:wrap
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background: #444;
-      padding: 1rem;
+    nav a{color:#fff;text-decoration:none;font-weight:bold}
+    section{max-width:1000px;margin:3rem auto;padding:0 1rem}
+    .roles{
+      display:grid;grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:2rem;margin-top:2rem
     }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
+    .role-card{
+      background:var(--card);padding:2rem;border-radius:12px;
+      box-shadow:var(--shadow);text-align:center
     }
-    section {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 1rem;
+    .role-card h3{margin-bottom:1rem;color:#333}
+    .about{
+      display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem
     }
-    .roles {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+    .about img{
+      max-width:250px;border-radius:50%;box-shadow:0 3px 8px rgba(0,0,0,.2)
     }
-    .role-card {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: center;
+    /* Social links */
+    .social{
+      display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:1rem
     }
-    .role-card h3 {
-      margin-bottom: 1rem;
-      color: #333;
+    .social a{
+      display:inline-flex;align-items:center;gap:.5rem;
+      padding:.6rem .9rem;border-radius:999px;background:#fff;
+      box-shadow:var(--shadow);text-decoration:none;color:var(--text);
+      transition:transform .08s ease, box-shadow .2s ease, background .2s ease
     }
-    /* About section styling */
-    .about {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 1.5rem;
+    .social a:hover{transform:translateY(-1px);box-shadow:0 6px 14px rgba(0,0,0,.12)}
+    .social svg{width:20px;height:20px;display:block}
+    .muted{color:var(--muted)}
+    footer{
+      background:var(--header);color:#fff;text-align:center;padding:2rem 1rem;margin-top:3rem
     }
-    .about img {
-      max-width: 250px;
-      border-radius: 50%;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-    }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-    }
-    footer a {
-      color: #fff;
-      text-decoration: underline;
+    footer a{color:#fff;text-decoration:underline}
+    /* Small screens: give a little breathing room */
+    @media (min-width:900px){
+      .about{flex-direction:row;text-align:left;align-items:flex-start}
+      .about img{max-width:220px}
+      .about > div{padding-left:2rem}
     }
   </style>
 </head>
@@ -101,10 +91,10 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- NEW About Section with photo + bio -->
+  <!-- About with photo -->
   <section id="about">
     <div class="about">
-      <img src="photo.jpeg" alt="Portrait of Natasha">
+      <img src="photo.jpeg" alt="Portrait of Natasha" />
       <div>
         <h2>About Me</h2>
         <p>
@@ -142,20 +132,63 @@
   <section id="writing">
     <h2>Writing & Content</h2>
     <p>Essays on economics, Industry 4.0/5.0, and multipotentialite living are published on Substack and GitHub Pages.</p>
-    <p><a href="http://natashathe.com">Visit natashathe.com</a></p>
+    <p><a href="http://natashathe.com" target="_blank" rel="noopener">Visit natashathe.com</a></p>
   </section>
 
+  <!-- Videos + Social icons -->
   <section id="videos">
     <h2>Videos</h2>
-    <p>Follow along on YouTube for maker builds, CNC timelapses, and community projects.</p>
-    <p><a href="#">Subscribe on YouTube</a></p>
+    <p>Follow along for builds, insights, and maker journeys across my channels:</p>
+    <div class="social">
+      <!-- YouTube Dev -->
+      <a href="https://youtube.com/@natashathedeveloper?si=ZoejhGBD0gSG3f_s" target="_blank" rel="noopener" aria-label="YouTube - Natasha the Developer">
+        <!-- YouTube SVG -->
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.5 6.2a4 4 0 0 0-2.8-2.8C18.9 3 12 3 12 3s-6.9 0-8.7.4A4 4 0 0 0 .5 6.2 41 41 0 0 0 0 12a41 41 0 0 0 .5 5.8 4 4 0 0 0 2.8 2.8C5.1 21 12 21 12 21s6.9 0 8.7-.4a4 4 0 0 0 2.8-2.8A41 41 0 0 0 24 12a41 41 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/>
+        </svg>
+        <span>Natasha the Developer</span>
+      </a>
+      <!-- YouTube Economist -->
+      <a href="https://youtube.com/@natashatheeconomist?si=0AjbQC5hQ6p0bymn" target="_blank" rel="noopener" aria-label="YouTube - Natasha the Economist">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.5 6.2a4 4 0 0 0-2.8-2.8C18.9 3 12 3 12 3s-6.9 0-8.7.4A4 4 0 0 0 .5 6.2 41 41 0 0 0 0 12a41 41 0 0 0 .5 5.8 4 4 0 0 0 2.8 2.8C5.1 21 12 21 12 21s6.9 0 8.7-.4a4 4 0 0 0 2.8-2.8A41 41 0 0 0 24 12a41 41 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/>
+        </svg>
+        <span>Natasha the Economist</span>
+      </a>
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@natashathemaker?_t=ZP-90JaHI7VAQo&_r=1" target="_blank" rel="noopener" aria-label="TikTok - Natasha the Maker">
+        <!-- TikTok SVG -->
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M21 8.1a7.6 7.6 0 0 1-4.6-1.5v7.2a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3.4a3.5 3.5 0 1 0 2.3 3.3V2h3.1c.3 1.5 1.3 2.8 2.7 3.6A7 7 0 0 0 21 6v2.1z"/>
+        </svg>
+        <span>Natasha the Maker</span>
+      </a>
+    </div>
   </section>
 
   <section id="contact">
     <h2>Connect</h2>
-    <p>Domains: <a href="http://natashathe.com">natashathe.com</a>, <a href="http://solydx.com">solydx.com</a>, <a href="http://groondlings.com">groondlings.com</a></p>
-    <p>Email: [your email here]</p>
-    <p>Social: TikTok, YouTube, Substack — all under Natasha the ___ branding</p>
+    <p>Domains:
+      <a href="http://natashathe.com" target="_blank" rel="noopener">natashathe.com</a>,
+      <a href="http://solydx.com" target="_blank" rel="noopener">solydx.com</a>,
+      <a href="http://groondlings.com" target="_blank" rel="noopener">groondlings.com</a>
+    </p>
+    <p>Email: <a href="mailto:natashadevelops@gmail.com">natashadevelops@gmail.com</a></p>
+
+    <div class="social" aria-label="Social links">
+      <a href="https://youtube.com/@natashathedeveloper?si=ZoejhGBD0gSG3f_s" target="_blank" rel="noopener" aria-label="YouTube - Natasha the Developer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a4 4 0 0 0-2.8-2.8C18.9 3 12 3 12 3s-6.9 0-8.7.4A4 4 0 0 0 .5 6.2 41 41 0 0 0 0 12a41 41 0 0 0 .5 5.8 4 4 0 0 0 2.8 2.8C5.1 21 12 21 12 21s6.9 0 8.7-.4a4 4 0 0 0 2.8-2.8A41 41 0 0 0 24 12a41 41 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg>
+        <span>YouTube (Developer)</span>
+      </a>
+      <a href="https://youtube.com/@natashatheeconomist?si=0AjbQC5hQ6p0bymn" target="_blank" rel="noopener" aria-label="YouTube - Natasha the Economist">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a4 4 0 0 0-2.8-2.8C18.9 3 12 3 12 3s-6.9 0-8.7.4A4 4 0 0 0 .5 6.2 41 41 0 0 0 0 12a41 41 0 0 0 .5 5.8 4 4 0 0 0 2.8 2.8C5.1 21 12 21 12 21s6.9 0 8.7-.4a4 4 0 0 0 2.8-2.8A41 41 0 0 0 24 12a41 41 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg>
+        <span>YouTube (Economist)</span>
+      </a>
+      <a href="https://www.tiktok.com/@natashathemaker?_t=ZP-90JaHI7VAQo&_r=1" target="_blank" rel="noopener" aria-label="TikTok - Natasha the Maker">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 8.1a7.6 7.6 0 0 1-4.6-1.5v7.2a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3.4a3.5 3.5 0 1 0 2.3 3.3V2h3.1c.3 1.5 1.3 2.8 2.7 3.6A7 7 0 0 0 21 6v2.1z"/></svg>
+        <span>TikTok (Maker)</span>
+      </a>
+    </div>
   </section>
 
   <footer>
