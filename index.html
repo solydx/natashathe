@@ -61,6 +61,19 @@
       margin-bottom: 1rem;
       color: #333;
     }
+    /* About section styling */
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .about img {
+      max-width: 250px;
+      border-radius: 50%;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
     footer {
       background: #222;
       color: #fff;
@@ -81,11 +94,32 @@
   </header>
 
   <nav>
+    <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#writing">Writing</a>
     <a href="#videos">YouTube</a>
     <a href="#contact">Contact</a>
   </nav>
+
+  <!-- NEW About Section with photo + bio -->
+  <section id="about">
+    <div class="about">
+      <img src="photo.jpeg" alt="Portrait of Natasha">
+      <div>
+        <h2>About Me</h2>
+        <p>
+          Hi, I’m Natasha — a maker, builder, economist-in-training, and multipotentialite who thrives at the intersection of craft and technology.
+          My journey spans woodworking, CNC machining, upholstery, CAD/CAM modeling, and economics. On TikTok and other platforms, I share my process: from shaping Baltic birch into modular pet steps to experimenting with laser-cutting, welding, and upholstery techniques.
+        </p>
+        <p>
+          My work lives under multiple brands — <strong>Groondlings</strong> for modular furniture and upholstery design, and <strong>Solyd Solutions</strong> for open-source maker tech, CNC files, and digital systems. I believe in empowering communities through design, Industry 4.0/5.0 tools, and resilient local manufacturing.
+        </p>
+        <p>
+          At heart, I’m not only a maker of things but also a builder of systems and futures. Whether in the classroom studying economics or in the workshop clamping, routing, and coding toolpaths, my mission is the same: to create, connect, and inspire others to realize their potential.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <section id="projects">
     <h2>Current Projects</h2>
